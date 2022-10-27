@@ -1,0 +1,194 @@
+<html>
+  <head>
+    <title>worldbuilder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      body {
+      font-family: Helvetica, sans-serif;
+      font-size: 13px;
+      background-color: #fcfcfc;
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Old versions of Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */file:///Users/claudiourbina/Desktop/worldbuilder/games.html
+                  user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+      }
+
+      a{
+        color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      }
+
+      a:hover{
+      color: #fcfcfc;
+        text-shadow: 2px 2px #888888;
+      }
+
+      wblogo{
+      visibility: visible;
+      position: fixed;
+      top: auto;
+      bottom: 1%;
+      left: auto;
+      right: -0.5%;
+      z-index:10;
+      transform: scale(0.75);
+      }
+
+      logosdesktop{
+      visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      logosmobile{
+      visibility: visible;
+        position: absolute;
+        transform: scale(0.8);
+        top: 30%;
+      }
+
+      @media only screen and (min-width: 1000px) {
+      logosdesktop{
+      visibility: visible;
+      }
+      logosmobile{
+      visibility: hidden;
+      }
+      wblogo{
+      top: auto;
+      bottom: 2%;
+      left: auto;
+      right: 1.5%;
+        transform: scale(1);
+      }
+      }
+    </style>
+
+    <link rel="icon" href="http://www.worldbuilder.us/favicon.ico" />
+  </head>
+  <body>
+    <logosdesktop>
+      <center>
+        <img
+          src="fantasia/fantasia_logo.png"
+          width="45%"
+          onContextMenu="return false;"
+          draggable="false"
+        />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+          href="https://worldbuilder.us/geist"
+          ><img
+            src="geist/geist_logo.png"
+            width="40%"
+            onContextMenu="return false;"
+            draggable="false"
+        /></a>
+        <br /><br />
+        <br />
+
+        <script
+          language="JavaScript"
+          src="scripts/gen_validatorv31.js"
+          type="text/javascript"
+        ></script>
+
+        <form method="post" name="myemailform" action="form-to-email.php">
+          <p>
+            <input type="text" name="email" placeholder="email address" />
+            <input type="submit" name="submit" value="join mailing list" />
+          </p>
+        </form>
+        <script language="JavaScript">
+          // Code for validating the form
+          // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+          // for details
+          var frmvalidator = new Validator("myemailform");
+          frmvalidator.addValidation(
+            "email",
+            "req",
+            "Please provide your email"
+          );
+          frmvalidator.addValidation(
+            "email",
+            "email",
+            "Please enter a valid email address"
+          );
+        </script>
+
+        <br /><br />
+        <a href="games"><img src="games/games_logo.png" /></a>
+      </center>
+    </logosdesktop>
+
+    <wblogo>
+      <img
+        src="worldbuilder_logo.png"
+        width="110px"
+        onContextMenu="return false;"
+        draggable="false"
+      />
+    </wblogo>
+
+    <logosmobile>
+      <center>
+        <img
+          src="fantasia/fantasia_logo.png"
+          width="49%"
+          onContextMenu="return false;"
+          draggable="false"
+        />&nbsp;&nbsp;&nbsp;
+        <a href="https://worldbuilder.us/geist"
+          ><img
+            src="geist/geist_logo.png"
+            width="44%"
+            onContextMenu="return false;"
+            draggable="false"
+        /></a>
+        <br /><br />
+        <br />
+
+        <script
+          language="JavaScript"
+          src="scripts/gen_validatorv31.js"
+          type="text/javascript"
+        ></script>
+
+        <form method="post" name="myemailform" action="form-to-email.php">
+          <p>
+            <input type="text" name="email" placeholder="email address" />
+            <input type="submit" name="submit" value="join mailing list" />
+          </p>
+        </form>
+        <script language="JavaScript">
+          // Code for validating the form
+          // Visit http://www.javascript-coder.com/html-form/javascript-form-validation.phtml
+          // for details
+          var frmvalidator = new Validator("myemailform");
+          frmvalidator.addValidation(
+            "email",
+            "req",
+            "Please provide your email"
+          );
+          frmvalidator.addValidation(
+            "email",
+            "email",
+            "Please enter a valid email address"
+          );
+        </script>
+        <br /><br />
+        <a href="games"><img src="games/games_logo.png" /></a>
+
+        <br /><br />
+        <br /><br />
+        <br /><br />
+        <br /><br />
+        <br /><br />
+      </center>
+    </logosmobile>
+  </body>
+</html>

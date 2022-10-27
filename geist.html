@@ -1,0 +1,870 @@
+<html>
+  <head>
+    <title>geist</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+    
+            @-webkit-keyframes fall {
+                0% {
+                    opacity: 0.9;
+                    top: 0
+                }
+                100% {
+                    opacity: 0.2;
+                    top: 100%
+                }
+            }
+
+            @keyframes fall {
+                0% {
+                    opacity: 0.9;
+                    top: 0
+                }
+                100% {
+                    opacity: 0.2;
+                    top: 100%
+                }
+            }
+
+            @-webkit-keyframes blow-soft-left {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: -50%
+                }
+            }
+
+            @keyframes blow-soft-left {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: -50%
+                }
+            }
+
+            @-webkit-keyframes blow-medium-left {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: -100%
+                }
+            }
+
+            @keyframes blow-medium-left {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: -100%
+                }
+            }
+
+            @-webkit-keyframes blow-soft-right {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: 50%
+                }
+            }
+
+            @keyframes blow-soft-right {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: 50%
+                }
+            }
+
+            @-webkit-keyframes blow-medium-right {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: 100%
+                }
+            }
+
+            @keyframes blow-medium-right {
+                0% {
+                    margin-left: 0
+                }
+                100% {
+                    margin-left: 100%
+                }
+            }
+
+            @-webkit-keyframes sway-0 {
+                0% {
+                    -webkit-transform: rotate(-5deg)
+                }
+                40% {
+                    -webkit-transform: rotate(28deg)
+                }
+                100% {
+                    -webkit-transform: rotate(3deg)
+                }
+            }
+
+            @keyframes sway-0 {
+                0% {
+                    -ms-transform: rotate(-5deg);
+                    transform: rotate(-5deg)
+                }
+                40% {
+                    -ms-transform: rotate(28deg);
+                    transform: rotate(28deg)
+                }
+                100% {
+                    -ms-transform: rotate(3deg);
+                    transform: rotate(3deg)
+                }
+            }
+
+            @-webkit-keyframes sway-1 {
+                0% {
+                    -webkit-transform: rotate(10deg)
+                }
+                40% {
+                    -webkit-transform: rotate(43deg)
+                }
+                100% {
+                    -webkit-transform: rotate(15deg)
+                }
+            }
+
+            @keyframes sway-1 {
+                0% {
+                    -ms-transform: rotate(10deg);
+                    transform: rotate(10deg)
+                }
+                40% {
+                    -ms-transform: rotate(43deg);
+                    transform: rotate(43deg)
+                }
+                100% {
+                    -ms-transform: rotate(15deg);
+                    transform: rotate(15deg)
+                }
+            }
+
+            @-webkit-keyframes sway-2 {
+                0% {
+                    -webkit-transform: rotate(15deg)
+                }
+                40% {
+                    -webkit-transform: rotate(56deg)
+                }
+                100% {
+                    -webkit-transform: rotate(22deg)
+                }
+            }
+
+            @keyframes sway-2 {
+                0% {
+                    -ms-transform: rotate(15deg);
+                    transform: rotate(15deg)
+                }
+                40% {
+                    -ms-transform: rotate(56deg);
+                    transform: rotate(56deg)
+                }
+                100% {
+                    -ms-transform: rotate(22deg);
+                    transform: rotate(22deg)
+                }
+            }
+
+            @-webkit-keyframes sway-3 {
+                0% {
+                    -webkit-transform: rotate(25deg)
+                }
+                40% {
+                    -webkit-transform: rotate(74deg)
+                }
+                100% {
+                    -webkit-transform: rotate(37deg)
+                }
+            }
+
+            @keyframes sway-3 {
+                0% {
+                    -ms-transform: rotate(25deg);
+                    transform: rotate(25deg)
+                }
+                40% {
+                    -ms-transform: rotate(74deg);
+                    transform: rotate(74deg)
+                }
+                100% {
+                    -ms-transform: rotate(37deg);
+                    transform: rotate(37deg)
+                }
+            }
+
+            @-webkit-keyframes sway-4 {
+                0% {
+                    -webkit-transform: rotate(40deg)
+                }
+                40% {
+                    -webkit-transform: rotate(68deg)
+                }
+                100% {
+                    -webkit-transform: rotate(25deg)
+                }
+            }
+
+            @keyframes sway-4 {
+                0% {
+                    -ms-transform: rotate(40deg);
+                    transform: rotate(40deg)
+                }
+                40% {
+                    -ms-transform: rotate(68deg);
+                    transform: rotate(68deg)
+                }
+                100% {
+                    -ms-transform: rotate(25deg);
+                    transform: rotate(25deg)
+                }
+            }
+
+            @-webkit-keyframes sway-5 {
+                0% {
+                    -webkit-transform: rotate(50deg)
+                }
+                40% {
+                    -webkit-transform: rotate(78deg)
+                }
+                100% {
+                    -webkit-transform: rotate(40deg)
+                }
+            }
+
+            @keyframes sway-5 {
+                0% {
+                    -ms-transform: rotate(50deg);
+                    transform: rotate(50deg)
+                }
+                40% {
+                    -ms-transform: rotate(78deg);
+                    transform: rotate(78deg)
+                }
+                100% {
+                    -ms-transform: rotate(40deg);
+                    transform: rotate(40deg)
+                }
+            }
+
+            @-webkit-keyframes sway-6 {
+                0% {
+                    -webkit-transform: rotate(65deg)
+                }
+                40% {
+                    -webkit-transform: rotate(92deg)
+                }
+                100% {
+                    -webkit-transform: rotate(58deg)
+                }
+            }
+
+            @keyframes sway-6 {
+                0% {
+                    -ms-transform: rotate(65deg);
+                    transform: rotate(65deg)
+                }
+                40% {
+                    -ms-transform: rotate(92deg);
+                    transform: rotate(92deg)
+                }
+                100% {
+                    -ms-transform: rotate(58deg);
+                    transform: rotate(58deg)
+                }
+            }
+
+            @-webkit-keyframes sway-7 {
+                0% {
+                    -webkit-transform: rotate(72deg)
+                }
+                40% {
+                    -webkit-transform: rotate(118deg)
+                }
+                100% {
+                    -webkit-transform: rotate(68deg)
+                }
+            }
+
+            @keyframes sway-7 {
+                0% {
+                    -ms-transform: rotate(72deg);
+                    transform: rotate(72deg)
+                }
+                40% {
+                    -ms-transform: rotate(118deg);
+                    transform: rotate(118deg)
+                }
+                100% {
+                    -ms-transform: rotate(68deg);
+                    transform: rotate(68deg)
+                }
+            }
+
+            @-webkit-keyframes sway-8 {
+                0% {
+                    -webkit-transform: rotate(94deg)
+                }
+                40% {
+                    -webkit-transform: rotate(136deg)
+                }
+                100% {
+                    -webkit-transform: rotate(82deg)
+                }
+            }
+
+            @keyframes sway-8 {
+                0% {
+                    -ms-transform: rotate(94deg);
+                    transform: rotate(94deg)
+                }
+                40% {
+                    -ms-transform: rotate(136deg);
+                    transform: rotate(136deg)
+                }
+                100% {
+                    -ms-transform: rotate(82deg);
+                    transform: rotate(82deg)
+                }
+            }
+
+            .sakura {
+                background: -webkit-linear-gradient(120deg, rgba(255, 0, 14, 0.9), rgba(255, 14, 25, 0.9));
+                background: linear-gradient(120deg, rgba(255, 0, 14, 0.9), rgba(255, 14, 25, 0.9));
+                pointer-events: none;
+                position: absolute
+            }
+
+
+      a {
+        text-decoration: none;
+      }
+
+      /* CSS Reset */
+    body, header, nav, main, footer, img, h1, h3, ul, section, aside, figure, figcaption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    }
+
+      body {
+        background-color: rgb(220, 220, 220);
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+      }
+      /*
+      content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      */
+
+      table, th, td, tr {
+        width: 80%;
+        border: 0.5px solid;
+        text-align: center;
+        height: auto;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      table {
+          margin-top: 1em;
+      }
+
+      td {
+        padding: 1em;
+      }
+
+      td:first-child {
+        text-align: left;
+        width: min-content;
+      }
+
+      table tr a:hover {
+        color: #0b0b47;
+        background-color: #fff;
+      }
+      
+      
+      
+      @media screen and (max-width:768px) {
+        .tohide { 
+            display: none; 
+            
+        }
+    }
+      
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+      
+      .logo {
+        size: 50%;
+      }
+
+      .embed-container {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+      }
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      @media only screen and (min-width: 1000px) {
+        .embed-container {
+          position: relative;
+          padding-bottom: 44%;
+          height: 0;
+          overflow: hidden;
+          max-width: 80%;
+        }
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      label,
+      a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.25em;
+      }
+      
+    </style>
+    <link rel="icon" href="http://www.worldbuilder.us/favicon.ico" />
+  </head>
+  <body>
+      <script type="text/javascript">
+            // Plugin code
+            (function ($) {
+                /** Polyfills and prerequisites **/
+
+                // requestAnimationFrame Polyfill
+                var lastTime    = 0;
+                var vendors     = ['webkit', 'o', 'ms', 'moz', ''];
+                var vendorCount = vendors.length;
+
+                for (var x = 0; x < vendorCount && ! window.requestAnimationFrame; ++x) {
+                    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+                    window.cancelAnimationFrame  = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+                }
+
+                if ( ! window.requestAnimationFrame) {
+                    window.requestAnimationFrame = function(callback) {
+                        var currTime   = new Date().getTime();
+                        var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+
+                        var id   = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+                        lastTime = currTime + timeToCall;
+
+                        return id;
+                    };
+                }
+
+                if ( ! window.cancelAnimationFrame) {
+                    window.cancelAnimationFrame = function(id) {
+                        clearTimeout(id);
+                    };
+                }
+
+                // Prefixed event check
+                $.fn.prefixedEvent = function(type, callback) {
+                    for (var x = 0; x < vendorCount; ++x) {
+                        if ( ! vendors[x]) {
+                            type = type.toLowerCase();
+                        }
+
+                        el = (this instanceof jQuery ? this[0] : this);
+                        el.addEventListener(vendors[x] + type, callback, false);
+                    }
+
+                    return this;
+                };
+
+                // Test if element is in viewport
+                function elementInViewport(el) {
+
+                    if (el instanceof jQuery) {
+                        el = el[0];
+                    }
+
+                    var rect = el.getBoundingClientRect();
+
+                    return (
+                        rect.top >= 0 &&
+                            rect.left >= 0 &&
+                            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                        );
+                }
+
+                // Random array element
+                function randomArrayElem(arr) {
+                    return arr[Math.floor(Math.random() * arr.length)];
+                }
+
+                // Random integer
+                function randomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+                /** Actual plugin code **/
+                $.fn.sakura = function (event, options) {
+
+                    // Target element
+                    var target = this.selector == "" ? $('body') : this;
+
+                    // Defaults for the option object, which gets extended below
+                    var defaults = {
+                        blowAnimations: ['blow-soft-left', 'blow-medium-left', 'blow-soft-right', 'blow-medium-right'],
+                        className: 'sakura',
+                        fallSpeed: 1,
+                        maxSize: 10,
+                        minSize: 4,
+                        newOn: 300,
+                        swayAnimations: ['sway-0', 'sway-1', 'sway-2', 'sway-3', 'sway-4', 'sway-5', 'sway-6', 'sway-7', 'sway-8']
+                    };
+
+                    var options = $.extend({}, defaults, options);
+
+                    // Default or start event
+                    if (typeof event === 'undefined' || event === 'start') {
+
+                        // Set the overflow-x CSS property on the target element to prevent horizontal scrollbars
+                        target.css({ 'overflow-x': 'hidden' });
+
+                        // Function that inserts new petals into the document
+                        var petalCreator = function () {
+                            if (target.data('sakura-anim-id')) {
+                                setTimeout(function () {
+                                    requestAnimationFrame(petalCreator);
+                                }, options.newOn);
+                            }
+
+                            // Get one random animation of each type and randomize fall time of the petals
+                            var blowAnimation = randomArrayElem(options.blowAnimations);
+                            var swayAnimation = randomArrayElem(options.swayAnimations);
+                            var fallTime = ((document.documentElement.clientHeight * 0.007) + Math.round(Math.random() * 5)) * options.fallSpeed;
+
+                            // Build animation
+                            var animations =
+                                'fall ' + fallTime + 's linear 0s 1' + ', ' +
+                                    blowAnimation + ' ' + (((fallTime > 30 ? fallTime : 30) - 20) + randomInt(0, 20)) + 's linear 0s infinite' + ', ' +
+                                    swayAnimation + ' ' + randomInt(2, 4) + 's linear 0s infinite';
+
+                            // Create petal and randomize size
+                            var petal  = $('<div class="' + options.className + '" />');
+                            var height = randomInt(options.minSize, options.maxSize);
+                            var width  = height - Math.floor(randomInt(0, options.minSize) / 3);
+
+                            // Apply Event Listener to remove petals that reach the bottom of the page
+                            petal.prefixedEvent('AnimationEnd', function () {
+                                if ( ! elementInViewport(this)) {
+                                    $(this).remove();
+                                }
+                            })
+                            // Apply Event Listener to remove petals that finish their horizontal float animation
+                            .prefixedEvent('AnimationIteration', function (ev) {
+                                if (
+                                    (
+                                        $.inArray(ev.animationName, options.blowAnimations) != -1 ||
+                                        $.inArray(ev.animationName, options.swayAnimations) != -1
+                                    ) &&
+                                    ! elementInViewport(this)
+                                ) {
+                                    $(this).remove();
+                                }
+                            })
+                            .css({
+                                '-webkit-animation': animations,
+                                animation: animations,
+                                'border-radius': randomInt(options.maxSize, (options.maxSize + Math.floor(Math.random() * 10))) + 'px ' + randomInt(1, Math.floor(width / 4)) + 'px',
+                                height: height + 'px',
+                                left: (Math.random() * document.documentElement.clientWidth - 100) + 'px',
+                                'margin-top': (-(Math.floor(Math.random() * 20) + 15)) + 'px',
+                                width: width + 'px'
+                            });
+
+                            target.append(petal);
+                        };
+
+                        // Finally: Start adding petals
+                        target.data('sakura-anim-id', requestAnimationFrame(petalCreator));
+
+                    }
+                    // Stop event, which stops the animation loop and removes all current blossoms
+                    else if (event === 'stop') {
+
+                        // Cancel animation
+                        var animId = target.data('sakura-anim-id');
+
+                        if (animId) {
+                            cancelAnimationFrame(animId);
+                            target.data('sakura-anim-id', null);
+                        }
+
+                        // Remove all current blossoms
+                        setTimeout(function() {
+                            $('.' + options.className).remove();
+                        }, (options.newOn + 50));
+
+                    }
+                };
+            }(jQuery));
+
+            $(document).ready(function() {
+                $('body').sakura();
+            });
+        </script>
+  
+      <div class="logo">
+        <img 
+          src="geist_logo.png"
+          width="40%"
+          onContextMenu="return false"
+          draggable="false"
+          class="center"
+        >
+      </div>
+      
+        <div class="release-table" style="
+        text-align: center;
+        font-size: medium;
+        overflow-x:auto;
+        ">
+          <table class="center">
+            <tr>
+              <td><b>001:</b></td>
+              <td class="tohide"><img src="001.png" alt="" height=40 width=40 /></td>
+              <td>FANTASIA, ACT I: OVERTURE</td> 
+              <td>NTHWORLD</td>
+              <td class="tohide"><a href=
+                "https://soundcloud.com/geist-digital/001-nthworld-fantasia-act-i-overture?in=geist-digital/sets/digital-mixtapes&si=b85ccef003c44b519171e647deb2b132&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <i>soundcloud</i></a></td>
+              <td class="tohide">
+                <a href="https://youtu.be/hIwGaATRS_I">
+                  <i>youtube</i></a>
+              </td>
+              <td>
+                  <a href="https://relayx.com/market/fb038081fa780f4106e27143ed3467487563073431ce943b47a5241860053666_o3">
+                      <i>relayx</i>
+                  </a>
+              </td>
+            </tr>
+            <tr>
+              <td><b>002:</b></td>
+              <td class="tohide"><img src="002.png" alt="" height=40 width=40 /></td>
+              <td>SECRET ADMIRER</td> 
+              <td>SKUWID</td>
+              <td class="tohide"><a href=
+                "https://soundcloud.com/geist-digital/002-skuwid?in=geist-digital/sets/digital-mixtapes&si=2a233a9942a04a53bd2aefc20efd3737&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <i>soundcloud</i></a></td>
+              <td class="tohide">
+                <a href="https://youtu.be/eUKvs93gv9E">
+                  <i>youtube</i></a>
+              </td>
+              <td>
+                  <a href="https://relayx.com/market/2d28c0873a4809a74f90864b802d877be8d54408209a80e9dee4fed80b20de77_o3">
+                      <i>relayx</i>
+                  </a>
+              </td>
+            </tr>
+            <tr>
+              <td><b>003:</b></td>
+              <td class="tohide"><img src="003.png" alt="" height=40 width=40 /></td>
+              <td>SLEEPWALKERS VOL.333</td> 
+              <td>THE BUILDER</td>
+              <td class="tohide"><a href=
+                "https://soundcloud.com/geist-digital/003-the-builder-sleepwalkers-vol333?in=geist-digital/sets/digital-mixtapes&si=0eec104f819140408d7d1170a53c6d18&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <i>soundcloud</i></a></td>
+              <td class="tohide">
+                <a href="https://youtu.be/XVSpUvWw_9U">
+                  <i>youtube</i></a>
+              </td>
+              <td>
+                      <a href="https://relayx.com/market/0b9ff3aa8d8fc24649f597487337195ec9def0be6e64f3e1eb6c9e40b77602b1_o3">
+                      <i>relayx</i></a>
+                  
+              </td>
+            </tr>
+            <tr>
+              <td><b>004:</b></td>
+              <td class="tohide"><img src="004.png" alt="" height=40 width=40 /></td>
+              <td>OUTLINES VOL.1</td> 
+              <td>NOFACE</td>
+              <td class="tohide"><a href=
+                "https://soundcloud.com/geist-digital/004-noface-outlines-vol1?in=geist-digital/sets/digital-mixtapes&si=50b27a4c84a841f59dc70b72f76e66a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <i>soundcloud</i></a></td>
+              <td class="tohide">
+                <a href="https://youtu.be/PrXKZjpqZHk"><i>youtube</i></a>
+              </td>
+              <td>
+                      <a href="https://relayx.com/market/fca1444821cc10f77bfd1be8bee5914a20f4005b0c232193c26d261a73243db9_o3">
+                      <i>relayx</i></a>
+                  
+              </td>
+            </tr>
+            <tr>
+              <td><b>005:</b></td>
+              <td class="tohide"><img src="005.JPG" alt="" height=40 width=40 /></td>
+              <td>DREDD VOL.1</td> 
+              <td>MUDDY WAVES VS DJ BLADE</td>
+              <td class="tohide"><a href=
+                "https://soundcloud.com/geist-digital/005-muddy-waves-vs-dj-blade-dreddvol1?si=f56ef26ff557414b86d6626d6892d50e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+                <i>soundcloud</i></a></td>
+              <td class="tohide">
+                <a href=
+                "https://youtube.com/watch?v=VvTJtcIm_uc&feature=share&si=EMSIkaIECMiOmarE6JChQQ">
+                  <i>youtube</i>
+                  </a>
+              </td>
+              <td>
+                  <a href="https://relayx.com/market/a76dc51105f2ce8ff2c662bf67567075ac1066cf353227efd1223529e2a8633b_o3">
+                      <i>relayx</i>
+                  </a>
+              </td>
+            </tr>
+           
+          </table>
+          <br>
+          
+        <div class="exclusive-table" style="
+        text-align: center;
+        font-size: medium;
+        overflow-x:auto;
+         
+        ">
+          <table class="center" style="
+          border: 0px solid;
+          ">
+              
+                  <th style="
+                  font-size: large;
+                  border: 0px solid;
+                  "><b>EXCLUSIVE:</b></th>
+              
+              <tr>
+              <!-- <td><b>001:</b></td> -->
+              <td style=
+              "text-align: center;
+              border: 0px solid;
+              ">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/ukhtEI2JuVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </td>
+              </tr>
+              <tr>
+                  <td style=
+                  "text-align: center;
+                  border: 0px solid;
+                  ">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/KJJz4D5qwq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </td>
+              </tr>
+              <tr>
+                  <td style=
+                  "text-align: center;
+                  border: 0px solid;
+                  ">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/as0R-c9pLK0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </td>
+              </tr>
+          </table>
+          <!-- YOUTUBE EMBED FOR DREAM DREKK
+          <iframe
+            src="https://www.youtube.com/embed/YKEecWytWfU"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          
+        </div>
+        <br />
+        <br />
+        <br />
+        
+        <font size="2">salon and cough & Exit Sense &#8211; "Dream drekk"</font>
+        <br />
+        <br />
+        <br />
+        <font size="5"><b>HEAVEN'S BRIMSTONE</b></font>
+        <br />
+        Release date TBA
+        -->
+        <br />
+        <a href="https://www.instagram.com/geist.us/"
+          ><img src="geist/instagram.png" width="24"
+        /></a>
+        <a href="https://twitter.com/____geist____"
+          ><img src="geist/twitter.png" width="24"
+        /></a>
+        <p><a href="https://www.youtube.com/channel/UCE9kYwWmunpSBS-XH4iiHDw" >
+            Youtube
+        </a></p>
+        <p><a href="https://twetch.com/u/76355">Twetch</a></p>
+        <p></p><a href="https://relayx.com/1geist">RelayX</a></p>
+        <footer style="
+            font-size: 0.75em;
+        ">
+            <p><a href='/index.html'>Home</a></p>
+            <p><a href='/how-to.html'>How to purchase mixtapes as NFTs</a></p>
+          <p>
+          <i>
+            <u>
+          We can be reached at:
+            </u>
+          </i>
+          </p>
+          <p>
+            <a href="mailto:worlding.build@protonmail.com">worlding.build@protonmail.com</a>
+          </p>
+          <p>Copyright 2022. 
+          All Rights Reserved.</p>
+        </footer>
+        </div>
+  </body>
+</html>
