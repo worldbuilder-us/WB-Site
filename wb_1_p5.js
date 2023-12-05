@@ -95,7 +95,7 @@ function spherical() {
   
   push();
   let radSec = 360 / 60 * second();
-  rotateY((0.025 * (millis()/60)/2));
+  rotateY((0.005 * (millis()/60)/2));
   //rotateX(frameCount/360);
   
   stroke(50);
