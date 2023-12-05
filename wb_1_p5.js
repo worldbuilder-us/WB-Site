@@ -5,7 +5,11 @@ let sphereRadius;
 var canvas;
 
 function preload() {
-  myFont = loadFont('PlayfairDisplay-Medium.ttf');
+  try {
+    myFont = loadFont('font/PlayfairDisplay-Medium.ttf');
+  } catch (error) {
+    console.error('Error loading font:', error);
+  }
 }
 
 function windowResized() {
@@ -15,9 +19,11 @@ function windowResized() {
 }
 
 function centerCanvas() {
-  let x = (windowWidth - width) / 2;
-  let y = (windowHeight - height) / 2;
-  canvas.position(x, y);
+  if (canvas) {
+    let x = (windowWidth - width) / 2;
+    let y = (windowHeight - height) / 2;
+    canvas.position(x, y);
+  }
 }
 
 function setup() {
