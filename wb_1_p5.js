@@ -27,20 +27,20 @@ function centerCanvas() {
 }
 
 function setup() {
-  
-  canvas = createCanvas(windowWidth - 50, windowHeight - 50, WEBGL);
+
+  canvas = createCanvas(windowWidth + 100, windowHeight + 100, WEBGL);
   centerCanvas();
 
   canvas.elt.style.position = "fixed";
   canvas.style('z-index', '-1');
-  
-  sphereRadius = width*0.115;
-  
+
+  sphereRadius = width * 0.15;
+
   textFont(myFont);
   //f = createFont("Helvetica",48,true);
-  
-  
-  
+
+
+
 }
 
 function draw() {
@@ -50,8 +50,8 @@ function draw() {
   stroke(1);
   strokeWeight(5);
   //push();
-  rect(-width/2 + 10, -height/2 + 10, width - 20, height - 20);
-  
+  rect(-width / 2 + 10, -height / 2 + 10, width - 20, height - 20);
+
   //rotate(mouseX);
   //rotateY((0.025 * (millis()/60)/2));
   //pop();
@@ -59,26 +59,26 @@ function draw() {
 
   spherical();
   stars();
-  
+
   fill(40);
   textAlign(CENTER);
-  textSize(width/12);
+  textSize(width / 12);
   //translate(width/2, height/2);
-  text("WORLDBUILDER", 0, -(sphereRadius*1.25), 0);
-  
+  text("WORLDBUILDER", 0, -(sphereRadius * 1), 0);
+
   //text("WORLDBUILDER", 0, (sphereRadius*1.75), 0);
   //rotateY(2*PI/3);
   //rotateY(2*PI/3);
-  textSize(width/35);
+  textSize(width / 35);
   //text("A Mandala Company", -(sphereRadius*3), -(width/50), width/5);
   textStyle(ITALIC);
-  text("A mandala company.", -(width/10), -(windowWidth/12), width/2);
-  
-  textSize(width/30);
+  text("A mandala company.", -(width / 10), -(windowWidth / 12), width / 2);
+
+  textSize(width / 30);
   //text("INTERNATIONAL HEAVENIZM", (sphereRadius*2), -(width/50), 100);
   //text("WORLDBUILDER", 0, 0, 150);
-  
-  
+
+
 }
 
 function stars() {
@@ -87,23 +87,23 @@ function stars() {
   noStroke();
   strokeWeight(random(5));
   //ellipse(random(-width, width), random(-height, height), random(15), random(15));
-  
-  
+
+
 }
 
 function spherical() {
-  
+
   push();
   let radSec = 360 / 60 * second();
-  rotateY((0.005 * (millis()/60)/2));
+  rotateY((0.005 * (millis() / 60) / 2));
   //rotateX(frameCount/360);
-  
+
   stroke(50);
-  fill(20+millis());
+  fill(20 + millis());
   strokeWeight(1.25);
   noFill();
   //ellipse(0, 0, sphereRadius*1.56);
-  
+
   //rotateX(PI/2);
   //ellipse(0, 0, sphereRadius*1.66);
 
@@ -118,9 +118,9 @@ function spherical() {
 
   //rotateX(PI/4);
   strokeWeight(0.75);
-  sphere(sphereRadius*4);
+  sphere(sphereRadius * 4);
   //translate(0, 50);
   //sphere(150);
   pop();
-  
+
 }
